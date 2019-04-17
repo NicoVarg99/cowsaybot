@@ -2,7 +2,7 @@ const fs = require("fs");
 const TelegramBot = require('node-telegram-bot-api');
 const escape = require('escape-html');
 var exec = require('child_process').exec;
-const token =  fs.readFileSync('data/token', 'utf8').trim();
+const token =  (process.env.TOKEN || fs.readFileSync('data/token', 'utf8').trim());
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
