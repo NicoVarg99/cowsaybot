@@ -51,3 +51,7 @@ bot.on('message', (msg) => {
       }
     }
 });
+
+bot.on('inline_query', (query) => {
+  console.log(query);
+});
